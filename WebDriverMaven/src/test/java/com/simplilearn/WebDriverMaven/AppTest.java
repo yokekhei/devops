@@ -20,7 +20,7 @@ public class AppTest
 	private WebDriver driver;
 	
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
 		
 		driver.get("https://www.simplilearn.com/");
