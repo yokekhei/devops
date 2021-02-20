@@ -17,9 +17,11 @@ public class LoginTest {
 
 	private WebDriver driver;
 	private SoftAssert assetobj;
-
+	
 	@BeforeTest
 	public void setup() {
+		assetobj = new SoftAssert();
+		
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver = new ChromeDriver();
 
@@ -45,6 +47,9 @@ public class LoginTest {
 		button.click();
 
 		WebElement error = driver.findElement(By.id("msg_box"));
+		wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOf(error));
+		
 		String actMsg = error.getText();
 		String expMsg = "The email or password you have entered is invalid";
 
@@ -52,7 +57,6 @@ public class LoginTest {
 		// Assert.assertEquals(actMsg, expMsg);
 
 		// Soft assertion
-		assetobj = new SoftAssert();
 		assetobj.assertEquals(actMsg, expMsg);
 
 //		assetobj.assertAll();
