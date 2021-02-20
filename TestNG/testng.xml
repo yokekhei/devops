@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MySuite">
+  <test thread-count="5" name="LoginTest">
+    <groups>
+    	<run>
+    		<include name="Sanity" />
+    	</run>
+    </groups>
+    <classes>
+      <class name="com.simplilearn.TestNG.Test1">
+      <methods>
+      	<!-- <include name="method1" /> -->
+      	<!-- <include name="method.*" /> -->
+      	<!-- <exclude name="method.*" /> -->
+      </methods>
+      </class>
+      <class name="com.simplilearn.TestNG.Test2"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
